@@ -1,0 +1,38 @@
+<!--<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create</a></h3> -->
+
+<a href="/employee" class="float" style="
+    position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#343A40;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+">
+<i class="fa fa-plus my-float" style="margin-top:22px;"></i>
+</a>
+<div class="container">
+<div class="row" style="margin:1rem">
+{{#each employees}}
+<div class="card mb-2 w-25 shadow" style="margin:1rem; margin-right:2rem">
+  <img src="../images/user1.png" class="card-img-top"  alt={{this.name}}>
+  <div class="card-body">
+        <h2 class="card-title">{{this.name}}</h2>
+        <p class="h5">Position: {{this.position}}</p>
+        <p class="h6">Email: {{this.email}}</p>
+        <p class="h6">Mobile: {{this.mobile}}</p>
+        <p class="h6">Salary: {{this.salary}}$</p>
+        <p class="h6">Address: {{this.address}}</p>
+        <p class="h6">Department: {{this.department}}</p>
+        <p class="card-text"><small class="text-muted">
+            <a href="/employee/{{this._id}}" class="btn btn-secondary rounded-circle"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            <a href="/employee/delete/{{this._id}} " onclick="return confirm('Are you sure to delete this Employee ?');" class="btn btn-danger rounded-circle"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+        </small></p>
+  </div>
+</div>
+{{/each}}
+</div>
+</div>
