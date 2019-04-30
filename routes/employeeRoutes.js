@@ -29,7 +29,8 @@ router.get('/employeesList', (req, res) => {
     Employee.find((err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                currentRoute: true
             });
         }
         else {
@@ -44,7 +45,12 @@ router.get('/engineering', (req, res) => {
     Employee.find({department:"Engineering"},(err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                engineeringRoute: () => {
+                    if (req.path === '/engineering'){
+                        return true
+                    }
+                }
             });
         }
         else {
@@ -61,7 +67,12 @@ router.get('/manufacture', (req, res) => {
     Employee.find({department: "Manufacturing"},(err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                manufactureRoute: () => {
+                    if (req.path === '/manufacture'){
+                        return true
+                    }
+                }
             });
         }
         else {
@@ -77,7 +88,12 @@ router.get('/research', (req, res) => {
     Employee.find({department:"Research & Development"},(err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                researchRoute: () => {
+                    if (req.path === '/research'){
+                        return true
+                    }
+                }
             });
         }
         else {
@@ -93,7 +109,12 @@ router.get('/IT', (req, res) => {
     Employee.find({department:"Information Technology"},(err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                itRoute: () => {
+                    if (req.path === '/IT'){
+                        return true
+                    }
+                }
             });
         }
         else {
@@ -109,7 +130,12 @@ router.get('/sales', (req, res) => {
     Employee.find({department:"Sales & Marketing"},(err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                salesRoute: () => {
+                    if (req.path === '/sales'){
+                        return true
+                    }
+                }
             });
         }
         else {
@@ -125,7 +151,12 @@ router.get('/operations', (req, res) => {
     Employee.find( {department: "Operations"}, (err, contents) => {
         if (!err) {
             res.render("employee/employees", {
-                employees: contents
+                employees: contents,
+                operationsRoute: () => {
+                    if (req.path === '/operations'){
+                        return true
+                    }
+                }
             });
         }
         else {

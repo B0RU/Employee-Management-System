@@ -1,4 +1,3 @@
-require('./models/connectDB');
 
 const express = require('express');
 
@@ -8,8 +7,9 @@ const hbs = require('express-handlebars');
 
 const bodyparser = require('body-parser');
 
-const employeeRoutes = require('./routes/employeeRoutes');
+require('./models/connectDB');
 
+const employeeRoutes = require('./routes/employeeRoutes');
 
 
 var app = express();
@@ -33,6 +33,7 @@ app.listen(3000, () => {
 });
 
 app.use('/employee', employeeRoutes);
+
 app.use('/', (req, res) => {
     res.render('departments/departmentsPage')
 });

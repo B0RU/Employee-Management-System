@@ -15,6 +15,35 @@
 <i class="fa fa-plus my-float" style="margin-top:22px;"></i>
 </a>
 <div class="container">
+
+  {{#if currentRoute}}
+    <h3 style="text-align:center">Our Company Employees</h3>
+  {{/if}}
+
+  {{#if engineeringRoute}}
+      <h3 style="text-align:center">Engineering Department</h3>
+  {{/if}}
+
+  {{#if manufactureRoute}}
+      <h3 style="text-align:center">Manufacturing Department</h3>
+  {{/if}}
+
+  {{#if salesRoute}}
+      <h3 style="text-align:center">Sales & Marketing Department</h3>
+  {{/if}}
+
+  {{#if itRoute}}
+      <h3 style="text-align:center">IT Department</h3>
+  {{/if}}
+
+  {{#if researchRoute}}
+      <h3 style="text-align:center">Research & Development Department</h3>
+  {{/if}}
+
+  {{#if operationsRoute}}
+      <h3 style="text-align:center">Operations Department</h3>
+  {{/if}}
+
 <div class="row" style="margin:1rem">
 {{#each employees}}
 <div class="card mb-2 w-25 shadow" style="margin:1rem; margin-right:2rem">
