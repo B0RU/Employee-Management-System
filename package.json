@@ -1,11 +1,11 @@
 {
-  "name": "Employees Management System",
+  "name": "employees-management-system",
   "version": "1.0.0",
   "description": "Employees Management System",
   "main": "server.js",
   "author": "Ahmed Reda",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "license": "ISC",
   "dependencies": {

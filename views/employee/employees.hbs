@@ -1,4 +1,16 @@
-<!--<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create</a></h3> -->
+<a href="/user/logout" class="float" title="signout" style="
+    position:fixed;
+	width:60px;
+	height:60px;
+	top:55px;
+	right:40px;
+	background-color:rgb(223, 30, 23);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+">
+<i class="fas fa-sign-out-alt" style="margin-top:22px"></i></a>
 
 <a href="/employee" class="float" style="
     position:fixed;
@@ -57,7 +69,7 @@
         <p class="h6">Address: {{this.address}}</p>
         <p class="h6">Department: {{this.department}}</p>
         <p class="card-text"><small class="text-muted">
-            <a href="/employee/{{this._id}}" class="btn btn-secondary rounded-circle"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            <a href="/employee/{{this._id}}" class="btn btn-secondary rounded-circle"><i class="fas fa-edit"></i></a>
             <a href="/employee/delete/{{this._id}} " onclick="return confirm('Are you sure to delete this Employee ?');" class="btn btn-danger rounded-circle"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
         </small></p>
   </div>

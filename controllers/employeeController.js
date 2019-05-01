@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Employee = mongoose.model('Employee');
 
+
 exports.addEmployee = (req, res)  => {
     var employee = new Employee();
     employee.name = req.body.name;
@@ -31,8 +32,11 @@ exports.addEmployee = (req, res)  => {
 
 
 exports.updateEmployee = (req, res) => {
-    Employee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
-        if (!err) { res.redirect('employee/employeesList'); }
+    Employee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, content) => {
+        if (!err) {
+            const backURL = req.header('Referer');
+            res.redirect(backURL);
+    }
         else {
             if (err.name == 'ValidationError') {
                 validationError(err, req.body);

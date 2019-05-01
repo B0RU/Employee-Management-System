@@ -1,0 +1,33 @@
+<head>
+     <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" action="/user/register" class="appointment-form" id="appointment-form">
+                <h2>SignUp</h2>
+                <div class="form-group-1">
+                    
+                    <input type="text" name="name" id="name" placeholder="Your Name" required />
+                    <input type="email" name="email" id="email" placeholder="Email" required />
+                    {{#if isExist}}{{errors.emailMsg}}{{/if}}
+                    <input type="password" name="password" id="password" placeholder="Password" required />
+                    <input type="password" id="password" name="password2" placeholder="Confirm Password" required/>
+                    {{#if isMatch}}{{errors.msg}}{{/if}}
+                </div>
+                
+                <div class="form-submit">
+                    <input type="submit" name="submit" id="submit" class="submit" value="SignUp" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
