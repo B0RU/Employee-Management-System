@@ -9,3 +9,5 @@ with 6 Department included you can manage all employees in a department(CRUD)
 3-run 'node server.js'
 
 4- go to 'http://localhost:3000'
+
+* make sure you have mongoDB installed on your machine.
